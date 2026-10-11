@@ -121,7 +121,7 @@ while True:
 
 ## Проверка 4
 
-Приложение принимает параметр `profile`, декодирует его из base64url и десириализует PHP-объект
+Приложение принимает параметр `profile`, декодирует его из base64url и десериализует PHP-объект
 
 ```php
 $encodedProfile = $_GET['profile'] ?? '';
@@ -188,7 +188,7 @@ final class LegacyTemplate
 
 `$displayName` объявлено без типа, поэтому туда можно положить объект класса `LegacyTemplate`, при приведении к строке вызовется метод `__toString()`, и сработает `file_get_contents()`
 
-## Обход защиты LFI
+### Обход защиты LFI
 
 ```php
 if (strpos($this->template, '../')) {
@@ -201,7 +201,7 @@ if (strpos($this->template, '../')) {
 Подставив `template = ../../../../flag`, поднимаемcя до корня и читиаем симлинк `flag`
 
 
-## Сборка Пэйлоуда
+### Сборка Пэйлоуда
 
 Необходимо сериализовать `MigratedProfile`, у которого свойство `displayName` - объект `LegacyTemplate` с значением `template = '../../../../flag'`
 
