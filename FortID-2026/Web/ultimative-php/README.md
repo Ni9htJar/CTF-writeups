@@ -51,7 +51,7 @@ if (!hash_equals($primaryHash, $backupHash)) {
 
 **Обход**: `GET /?access.level=administrator&primary[]=1&backup[]=2`
 
- - `get_debug_type()` для обоих вернёт "array"\n
+ - `get_debug_type()` для обоих вернёт "array"
  - `[1] === [2]` вернёт false, т.к массивы не идентичны
  - При конкатенации строки и массива будет выдано предупрежедение `"Array to string conversion"` и подставиться просото `"Array"`
 ```
